@@ -33,6 +33,8 @@
 # the "main" function is provided to get you started.
 
 # Please modify this method
+
+#this works only for width=3 and doesnt work for others
 def turn_array(param , shifts ):
     #print(param)
     x=len(param)
