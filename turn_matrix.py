@@ -35,14 +35,15 @@
 # Please modify this method
 
 #this works only for width=3 and doesnt work for others
+
+'''To make this work for all widths, I would create another loop that would iterate over the matrix "rings"
+The number of rings is equivalent to int(len(param)/2)'''
+
 def turn_array(param , shifts ):
     #print(param)
-    x=len(param)
     newparam=[[0 for x in range(len(param))] for y in range(len(param))]
-    #newrow=[]
     for rows in range(len(param)):
         for cols in range(len(param)):
-            #print(rows,cols)
             if rows==0 and cols<=len(param)-1-shifts:
                 newparam[rows][cols+shifts]=param[rows][cols]
             elif rows <= len(param)-1-shifts and cols > len(param)-1-shifts:
@@ -53,6 +54,7 @@ def turn_array(param , shifts ):
                 newparam[rows-shifts][cols]=param[rows][cols]
             else:
                 newparam[rows][cols]=param[rows][cols] 
+
     return newparam
 
 # Everything below is a helper code, you can ignore it.

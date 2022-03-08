@@ -14,13 +14,21 @@
 # the "main" function is provided to get you started.
 
 def worms(param):
-    total = 0
+    total=0
+    inter=[]
+    for i in param:
+        inter=str(i).split('0')
+        print(str(i))
+        print(inter)
+        for j in inter:
+            if j:
+                total+=int(j)
+        
     return total
 
 
 def main():
     print(worms(range(1, 101)))
-
 
 if __name__ == '__main__':
     main()

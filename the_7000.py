@@ -13,7 +13,16 @@ import random
 
 
 def find_7000(array1 , array2):
-    return array1
+    # i=0
+    # result=[]
+    # while i < len(array1):
+    #     if array1[i] in array2:
+    #         result.append(array1[i])
+    #     i+=1
+    result=[i for i in array1 if i in array2]
+    
+    
+    return result
 
 
 # Everything below is a helper code, you can ignore it.
@@ -42,7 +51,8 @@ def main():
         array1[x] = array[x]
         array2[x] = array[8000+x]
 
-    find_7000(array1 , array2)
+    final=find_7000(array1 , array2)
+    print(final,len(final))
 
 
 if __name__ == '__main__':

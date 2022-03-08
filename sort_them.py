@@ -7,7 +7,7 @@ import random
 # 3- no repeated numbers.
 # 4- the array will be always the same number of elements.
 # 5- there are no gaps in the numbers
-
+[12,20,40,66,300,120,2]
 # It is required to return a sorted array in the most optimized possible way.
 
 ###### WHAT ARE WE LOOKING FOR
@@ -19,8 +19,18 @@ import random
 # the "main" function is provided to get you started.
 
 def sort_it(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
+            if int(matrix[i]) < int(matrix [j]): #int is needed because string comparison caused "10000" < "5000" because 1<5
+                matrix[i],matrix[j]=matrix[j],matrix[i]    
     result = matrix
+    print(len(matrix))
     return result
+
+#Using bubble sort
+#Time complexity O(n^2)
+#Not the most time efficient
+#From research: The most efficient would be heap sort (time complexity n log(n))
 
 # Everything below is a helper code, you can ignore it.
 
@@ -39,14 +49,12 @@ def main():
 
     matrix_str= ["" for x in range(5000)]
     for i in range(5000):
-        matrix_str[i] = str(matrix[i] )
+        matrix_str[i] = str(matrix[i])
 
-    print_matrix(sort_it(matrix_str))
+    #print_matrix(sort_it(matrix_str))
+    print(sort_it(matrix_str))
 
 
 if __name__ == '__main__':
     main()
-
-
-
 
